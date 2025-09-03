@@ -1,5 +1,5 @@
 use std::hash::{Hash, Hasher};
-use egui::{Color32, ColorImage, CursorIcon, Pos2, Sense, Stroke, TextureHandle, TextureId, TextureOptions, Vec2};
+use egui::{Pos2, TextureHandle, TextureId, Vec2};
 use image::DynamicImage;
 use std::path::PathBuf;
 
