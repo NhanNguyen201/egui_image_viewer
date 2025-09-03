@@ -104,8 +104,7 @@ impl AppExt for App {
                     self.active_image =  Some(ActiveImage::new(loaded_texture.clone().unwrap().texture_handle.as_ref().unwrap().id() ));
                     self.output_textures_vec.push(loaded_texture.clone().unwrap());
                     self.image_preview_pads.push(ImagePreviewPad {
-                        width: 120.0,
-                        height: 80.0,
+                        
                         texture: loaded_texture.clone().unwrap_or_default(),
                     }); 
                 };

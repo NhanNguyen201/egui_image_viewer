@@ -152,15 +152,13 @@ impl Default for OutputTexture {
 
 #[derive(Clone)]
 pub struct ImagePreviewPad {
-    pub width: f32, 
-    pub height: f32,
+    
     pub texture: OutputTexture,
 }
 
 impl Hash for ImagePreviewPad {
     fn hash<H: Hasher>(&self, state: &mut H) {
-        self.width.to_bits().hash(state);
-        self.height.to_bits().hash(state);
+        
         self.texture.hash(state);
     }
 }
@@ -168,8 +166,7 @@ impl Hash for ImagePreviewPad {
 impl Default for ImagePreviewPad {
     fn default() -> Self {
         Self {
-            width: 50.0,
-            height: 40.0,
+          
             texture: OutputTexture::default(),
         }
     }

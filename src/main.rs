@@ -57,12 +57,6 @@ impl eframe::App for App {
                     if self.active_image.is_some() {
                         self.update_images_by_active_image();
                     }
-
-                    // ui.horizontal(|ui| {
-                    //     let margin: f32 = 10.0; 
-                    //     let starting_pos = Vec2 {x: 0., y: self.main_image_settings.image_plot_rect.max.y + 15.0};
-                        
-                    // });
                 });
                 
                 ui.add_space(10.0);
@@ -79,7 +73,6 @@ impl eframe::App for App {
                                 }
                             };
                         });
-                        // ui.allocate_at_least(desired_size, sense)
 
                         let image_preview_scroll_area = ScrollArea::vertical().max_height(300.0);
                            
@@ -109,7 +102,6 @@ impl eframe::App for App {
                                     };
                                     
                                     let img_preview_rect = egui::Rect::from_center_size(
-                                        // image_cover_rect.center(), 
                                         Pos2 {x: padding * 5. + image_cover_rect.min.x + image_preview.texture_handle.as_ref().unwrap().size_vec2().x * scaled / 2.0, y: image_cover_rect.center().y},
                                         Vec2 { x: image_preview.texture_handle.as_ref().unwrap().size_vec2().x * scaled, y: image_preview.texture_handle.as_ref().unwrap().size_vec2().y as f32 * scaled }
                                     );
@@ -118,7 +110,6 @@ impl eframe::App for App {
                                         Pos2 { x: 0.0, y: 0.0 }, 
                                         Pos2 { x: 1.0, y: 1.0 }
                                     );
-                                    // ui.painter().rect_filled(pad_rect, 0.0, Color32::from_gray(100));
                                     ui.painter().image(image_preview.texture_handle.as_ref().unwrap().id(), img_preview_rect, preview_uv, Color32::WHITE);
                                     ui.horizontal_centered(|ui| {
                                         ui.vertical_centered_justified( |ui| {
@@ -159,9 +150,7 @@ impl eframe::App for App {
                             
                         });
                         
-                        // let preview_rect = image_preview_scroll_area.
-                        // ui.add(image_preview_scroll_area);
-                        // let (img_preview_container_rect, _) = ui.allocate_exact_size(Vec2 { x: 200.0, y: 300.0 }, Sense::click());
+                       
                         if self.image_sorting_modify.is_sorting {
                             self.display_sorting_images(ctx);
                         }
