@@ -1,0 +1,13 @@
+[package]
+name = "img_viewer"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+eframe = "0.32.0"
+egui = "0.32.0"
+egui-phosphor = "0.10.0"
+egui_dnd = "0.13.0"
+egui_extras = "0.32.0"
+image = "0.25.6"
+rfd = "0.15.4"
