@@ -42,9 +42,10 @@ impl eframe::App for App {
                             self.display_cropping_image_ui(ctx, ui, raw_rect);
                         }
                     } else {
-                        for (idx, output_texture) in self.output_textures_vec.clone().iter_mut().enumerate() {
+                       
+                        for (idx, output_texture) in self.output_textures_vec.clone().iter_mut().rev().enumerate() {
                             let texture_rect = self.draw_image_to_board(ui,  output_texture);
-                            self.add_drag_events_to_image(ctx, ui, texture_rect, idx);
+                            self.add_drag_events_to_image(ctx, ui, texture_rect, self.output_textures_vec.len() -1 -idx);
                             
                         }
                     }
