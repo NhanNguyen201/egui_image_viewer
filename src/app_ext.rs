@@ -102,8 +102,8 @@ impl AppExt for App {
                     self.active_image_settings.transforms = loaded_texture.clone().unwrap().transform.clone();
                     self.active_image_settings.drag_offset = Vec2::new(0.0, 0.0);
                     self.active_image =  Some(ActiveImage::new(loaded_texture.clone().unwrap().texture_handle.as_ref().unwrap().id() ));
-                    self.output_textures_vec.push(loaded_texture.clone().unwrap());
-                    self.image_preview_pads.push(ImagePreviewPad {
+                    self.output_textures_vec.insert(0, loaded_texture.clone().unwrap());
+                    self.image_preview_pads.insert(0, ImagePreviewPad {
                         
                         texture: loaded_texture.clone().unwrap_or_default(),
                     }); 
